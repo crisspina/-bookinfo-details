@@ -30,7 +30,7 @@ jobs:
       - name: Set env
         run: echo "ENV_NAME=$( [ "$GITHUB_REF" == "refs/heads/master" ] && echo 'uat' || echo ${GITHUB_REF##*/} )" >> $GITHUB_ENV
       - name: get-credentials
-        uses: google-github-actions/get-gke-credentials@v0.2.1
+        uses: google-github-actions/get-gke-credentials@main
         with:
           cluster_name: k8s
           location: asia-southeast1-a
@@ -49,6 +49,7 @@ jobs:
                 "COMMIT_SHA": "${{ github.sha }}"
               }
             }
+            
   acceptance-test:
     needs: deploy
     runs-on: ubuntu-20.04
@@ -57,3 +58,7 @@ jobs:
         run: echo "ENV_NAME=$( [ "$GITHUB_REF" == "refs/heads/master" ] && echo 'uat' || echo ${GITHUB_REF##*/} )" >> $GITHUB_ENV
       - name: Check health check page
         run: curl http://bookinfo.${{ env.ENV_NAME }}.opsta.net/student124/details/health | grep "details is working"
+
+
+
+
