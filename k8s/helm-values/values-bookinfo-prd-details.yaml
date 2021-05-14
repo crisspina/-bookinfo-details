@@ -4,7 +4,7 @@ details:
   tag: prd
   replicas: 1
   imagePullSecrets: registry-bookinfo
-  port: 9080
+  port: 8080
   healthCheckPath: "/health"
 ingress:  
   host: bookinfo.opsta.net
