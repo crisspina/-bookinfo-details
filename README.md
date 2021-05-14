@@ -1,6 +1,6 @@
 # How to run details service
 
-## How to run with docker
+## How to run with docker.
 
 ```bash
 # Build Docker Image for details service
