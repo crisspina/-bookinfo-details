@@ -1,4 +1,4 @@
-details:
+  details:
   namespace: student124-bookinfo-dev
   image: ghcr.io/crisspina/bookinfo-details
   tag: dev
