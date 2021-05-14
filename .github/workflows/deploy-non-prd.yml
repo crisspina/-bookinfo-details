@@ -32,9 +32,9 @@ jobs:
       - name: get-credentials
         uses: google-github-actions/get-gke-credentials@v0.2.1
         with:
-          cluster_name: kodlnw-cluster
-          location: asia-southeast1-b  
-          credentials: ${{ secrets.GKE_KODLNW }}
+          cluster_name: k8s
+          location: asia-southeast1-a
+          credentials: ${{ secrets.GKE_CREDENTIALS }}
       - name: deploy
         uses: deliverybot/helm@v1
         with:
